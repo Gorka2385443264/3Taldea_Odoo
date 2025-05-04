@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_eskaera_platera,eskaera.platera,model_eskaera_platera,base.group_user,1,1,1,1
+access_eskaera_zerbitzaria,eskaera.zerbitzaria,model_eskaera_zerbitzaria,base.group_user,1,1,1,1
+access_eskaera_eguna_astero,eskaera.eguna_astero,model_eskaera_eguna_astero,base.group_user,1,1,1,1
+access_faktura_egunero_astero,faktura.egunero_astero,model_faktura_egunero_astero,base.group_user,1,1,1,1
+access_eskaerak_egunero_hilero,eskaerak.egunero_hilero,model_eskaerak_egunero_hilero,base.group_user,1,1,1,1

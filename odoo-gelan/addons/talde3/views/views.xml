@@ -1,0 +1,273 @@
+<odoo>
+  <data>
+    <!-- Template de error (ya lo tienes) -->
+    <template id="error_template" name="Error al actualizar datos">
+      <t t-call="website.layout">
+        <div class="container mt-5">
+          <div class="alert alert-danger" role="alert">
+            <t t-raw="error" />
+          </div>
+          <a href="/web" class="btn btn-primary">Volver</a>
+        </div>
+      </t>
+    </template>
+
+    <!-- Eskaera - Platera -->
+    <record model="ir.ui.view" id="eskaera_platera_list_view">
+      <field name="name">eskaera.platera.list</field>
+      <field name="model">eskaera.platera</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="zerbitzaria" />
+          <field name="eskaera_guztiak" />
+        </list>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="eskaera_platera_form_view">
+      <field name="name">eskaera.platera.form</field>
+      <field name="model">eskaera.platera</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="zerbitzaria" />
+              <field name="eskaera_guztiak" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Vista gráfica para Eskaera - Platera -->
+    <record model="ir.ui.view" id="eskaera_platera_graph_view">
+      <field name="name">eskaera.platera.graph</field>
+      <field name="model">eskaera.platera</field>
+      <field name="arch" type="xml">
+        <graph type="bar">
+          <field name="zerbitzaria" type="row" />
+          <field name="eskaera_guztiak" type="measure" />
+        </graph>
+      </field>
+    </record>
+
+    <!-- Eskaera - Zerbitzaria -->
+    <record model="ir.ui.view" id="eskaera_zerbitzaria_list_view">
+      <field name="name">eskaera.zerbitzaria.list</field>
+      <field name="model">eskaera.zerbitzaria</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="platera" />
+          <field name="eskaera_guztiak" />
+        </list>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="eskaera_zerbitzaria_form_view">
+      <field name="name">eskaera.zerbitzaria.form</field>
+      <field name="model">eskaera.zerbitzaria</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="platera" />
+              <field name="eskaera_guztiak" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Vista gráfica para Eskaera - Zerbitzaria -->
+    <record model="ir.ui.view" id="eskaera_zerbitzaria_graph_view">
+      <field name="name">eskaera.zerbitzaria.graph</field>
+      <field name="model">eskaera.zerbitzaria</field>
+      <field name="arch" type="xml">
+        <graph type="bar">
+          <field name="platera" type="row" />
+          <field name="eskaera_guztiak" type="measure" />
+        </graph>
+      </field>
+    </record>
+
+    <!-- Eskaera - Eguna_Astero -->
+    <record model="ir.ui.view" id="eskaera_eguna_astero_list_view">
+      <field name="name">eskaera.eguna_astero.list</field>
+      <field name="model">eskaera.eguna_astero</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="dia_semana" />
+          <field name="total_pedidos" />
+        </list>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="eskaera_eguna_astero_form_view">
+      <field name="name">eskaera.eguna_astero.form</field>
+      <field name="model">eskaera.eguna_astero</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="dia_semana" />
+              <field name="total_pedidos" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Vista gráfica para Eskaera - Eguna_Astero -->
+    <record model="ir.ui.view" id="eskaera_eguna_astero_graph_view">
+      <field name="name">eskaera.eguna_astero.graph</field>
+      <field name="model">eskaera.eguna_astero</field>
+      <field name="arch" type="xml">
+        <graph type="bar">
+          <field name="dia_semana" type="row" />
+          <field name="total_pedidos" type="measure" />
+        </graph>
+      </field>
+    </record>
+
+    <!-- Faktura - Egunero_Astero -->
+    <record model="ir.ui.view" id="faktura_egunero_astero_list_view">
+      <field name="name">faktura.egunero_astero.list</field>
+      <field name="model">faktura.egunero_astero</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="dia_semana" />
+          <field name="total_facturas" />
+        </list>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="faktura_egunero_astero_form_view">
+      <field name="name">faktura.egunero_astero.form</field>
+      <field name="model">faktura.egunero_astero</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="dia_semana" />
+              <field name="total_facturas" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Vista gráfica para Faktura - Egunero_Astero -->
+    <record model="ir.ui.view" id="faktura_egunero_astero_graph_view">
+      <field name="name">faktura.egunero_astero.graph</field>
+      <field name="model">faktura.egunero_astero</field>
+      <field name="arch" type="xml">
+        <graph type="bar">
+          <field name="dia_semana" type="row" />
+          <field name="total_facturas" type="measure" />
+        </graph>
+      </field>
+    </record>
+
+    <!-- Eskaerak - Egunero_Hilero -->
+    <record model="ir.ui.view" id="eskaerak_egunero_hilero_list_view">
+      <field name="name">eskaerak.egunero_hilero.list</field>
+      <field name="model">eskaerak.egunero_hilero</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="dia_mes" />
+          <field name="total_pedidos" />
+        </list>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="eskaerak_egunero_hilero_form_view">
+      <field name="name">eskaerak.egunero_hilero.form</field>
+      <field name="model">eskaerak.egunero_hilero</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="dia_mes" />
+              <field name="total_pedidos" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Vista gráfica para Eskaerak - Egunero_Hilero -->
+    <record model="ir.ui.view" id="eskaerak_egunero_hilero_graph_view">
+      <field name="name">eskaerak.egunero_hilero.graph</field>
+      <field name="model">eskaerak.egunero_hilero</field>
+      <field name="arch" type="xml">
+        <graph type="bar">
+          <field name="dia_mes" type="row" />
+          <field name="total_pedidos" type="measure" />
+        </graph>
+      </field>
+    </record>
+
+    <!-- Actions (actualizadas para incluir modo graph) -->
+    <record model="ir.actions.act_window" id="action_eskaera_platera">
+      <field name="name">Eskaera - Platera</field>
+      <field name="res_model">eskaera.platera</field>
+      <field name="view_mode">list,form,graph</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_eskaera_zerbitzaria">
+      <field name="name">Eskaera - Zerbitzaria</field>
+      <field name="res_model">eskaera.zerbitzaria</field>
+      <field name="view_mode">list,form,graph</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_eskaera_eguna_astero">
+      <field name="name">Eskaera - Eguna_Astero</field>
+      <field name="res_model">eskaera.eguna_astero</field>
+      <field name="view_mode">list,form,graph</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_faktura_egunero_astero">
+      <field name="name">Faktura - Egunero_Astero</field>
+      <field name="res_model">faktura.egunero_astero</field>
+      <field name="view_mode">list,form,graph</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_eskaerak_egunero_hilero">
+      <field name="name">Eskaerak - Egunero_Hilero</field>
+      <field name="res_model">eskaerak.egunero_hilero</field>
+      <field name="view_mode">list,form,graph</field>
+    </record>
+
+    <!-- Acción para actualizar datos (ya la tienes) -->
+    <record model="ir.actions.server" id="action_actualizar_datos">
+      <field name="name">Actualizar Datos</field>
+      <field name="model_id" ref="base.model_res_users" />
+      <field name="groups_id" eval="[(4, ref('base.group_system'))]" />
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+        'type': 'ir.actions.act_url',
+        'url': '/talde3/actualizar_datos',
+        'target': 'self',
+        }
+      </field>
+    </record>
+
+    <!-- Menús (ya los tienes) -->
+    <menuitem name="Talde3-2Erronka" id="menu_root" />
+    <menuitem name="Tablak" id="menu_tablak" parent="menu_root" />
+    <menuitem name="Actualizar" id="menu_actualizar" parent="menu_root"
+      action="action_actualizar_datos" sequence="20" />
+
+    <menuitem name="Eskaera - Platera" id="menu_eskaera_platera" parent="menu_tablak"
+      action="action_eskaera_platera" />
+    <menuitem name="Eskaera - Zerbitzaria" id="menu_eskaera_zerbitzaria" parent="menu_tablak"
+      action="action_eskaera_zerbitzaria" />
+    <menuitem name="Eskaera - Eguna_Astero" id="menu_eskaera_eguna_astero" parent="menu_tablak"
+      action="action_eskaera_eguna_astero" />
+    <menuitem name="Faktura - Egunero_Astero" id="menu_faktura_egunero_astero" parent="menu_tablak"
+      action="action_faktura_egunero_astero" />
+    <menuitem name="Eskaerak - Egunero_Hilero" id="menu_eskaerak_egunero_hilero"
+      parent="menu_tablak" action="action_eskaerak_egunero_hilero" />
+  </data>
+</odoo>
