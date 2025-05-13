@@ -4,3 +4,7 @@ access_eskaera_zerbitzaria,eskaera.zerbitzaria,model_eskaera_zerbitzaria,base.gr
 access_eskaera_eguna_astero,eskaera.eguna_astero,model_eskaera_eguna_astero,base.group_user,1,1,1,1
 access_faktura_egunero_astero,faktura.egunero_astero,model_faktura_egunero_astero,base.group_user,1,1,1,1
 access_eskaerak_egunero_hilero,eskaerak.egunero_hilero,model_eskaerak_egunero_hilero,base.group_user,1,1,1,1
+access_zerbitzaria,talde3.zerbitzaria,model_talde3_zerbitzaria,base.group_user,1,1,1,1
+access_mahaia,talde3.mahaia,model_talde3_mahaia,base.group_user,1,1,1,1
+access_eskaera,talde3.eskaera,model_talde3_eskaera,base.group_user,1,1,1,1
+access_platera,talde3.platera,model_talde3_platera,base.group_user,1,1,1,1

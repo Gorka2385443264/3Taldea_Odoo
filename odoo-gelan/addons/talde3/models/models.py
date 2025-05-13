@@ -118,3 +118,44 @@ class EskaerakEguneroHilero(models.Model):
             _logger.error(f"Error al enviar datos a API (egunero hilero): {str(e)}")
 
         return record
+
+class Zerbitzaria(models.Model):
+    _name = 'talde3.zerbitzaria'
+    _description = 'Zerbitzaria'
+
+    dni = fields.Char(string='DNI', required=True)
+    izena = fields.Char(string='Izena', required=True)
+    abizena = fields.Char(string='Abizena', required=True)
+    pasahitza = fields.Char(string='Pasahitza')
+    korreoa = fields.Char(string='Korreoa')
+    telefonoa = fields.Char(string='Telefonoa')
+    postua = fields.Char(string='Postua')
+    txat_baimena = fields.Boolean(string='Txat Baimena')
+
+class Mahaia(models.Model):
+    _name = 'talde3.mahaia'
+    _description = 'Mahaia'
+
+    mahai_zenbakia = fields.Integer(string='Mahai Zenbakia', required=True)
+    kopurua = fields.Integer(string='Kopurua')
+    habilitado = fields.Boolean(string='Habilitado', default=True)
+
+class Eskaera(models.Model):
+    _name = 'talde3.eskaera'
+    _description = 'Eskaera'
+
+    eskaera_zenb = fields.Integer(string='Eskaera Zenbakia', required=True)
+    izena = fields.Char(string='Izena', required=True)
+    prezioa = fields.Float(string='Prezioa')
+    mesa_id = fields.Many2one('talde3.mahaia', string='Mahaia', required=True)
+
+class Platera(models.Model):
+    _name = 'talde3.platera'
+    _description = 'Platera'
+
+    izena = fields.Char(string='Izena', required=True)
+    deskribapena = fields.Text(string='Deskribapena')
+    kategoria = fields.Char(string='Kategoria')
+    menu = fields.Boolean(string='Menu')
+    created_at = fields.Datetime(string='Created At', default=fields.Datetime.now)
+    created_by = fields.Many2one('res.users', string='Created By', default=lambda self: self.env.user)

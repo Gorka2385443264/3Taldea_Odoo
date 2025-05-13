@@ -1,6 +1,6 @@
 <odoo>
   <data>
-    <!-- Template de error (ya lo tienes) -->
+    <!-- Template de error -->
     <template id="error_template" name="Error al actualizar datos">
       <t t-call="website.layout">
         <div class="container mt-5">
@@ -39,7 +39,6 @@
       </field>
     </record>
 
-    <!-- Vista gráfica para Eskaera - Platera -->
     <record model="ir.ui.view" id="eskaera_platera_graph_view">
       <field name="name">eskaera.platera.graph</field>
       <field name="model">eskaera.platera</field>
@@ -78,7 +77,6 @@
       </field>
     </record>
 
-    <!-- Vista gráfica para Eskaera - Zerbitzaria -->
     <record model="ir.ui.view" id="eskaera_zerbitzaria_graph_view">
       <field name="name">eskaera.zerbitzaria.graph</field>
       <field name="model">eskaera.zerbitzaria</field>
@@ -117,7 +115,6 @@
       </field>
     </record>
 
-    <!-- Vista gráfica para Eskaera - Eguna_Astero -->
     <record model="ir.ui.view" id="eskaera_eguna_astero_graph_view">
       <field name="name">eskaera.eguna_astero.graph</field>
       <field name="model">eskaera.eguna_astero</field>
@@ -156,7 +153,6 @@
       </field>
     </record>
 
-    <!-- Vista gráfica para Faktura - Egunero_Astero -->
     <record model="ir.ui.view" id="faktura_egunero_astero_graph_view">
       <field name="name">faktura.egunero_astero.graph</field>
       <field name="model">faktura.egunero_astero</field>
@@ -195,7 +191,6 @@
       </field>
     </record>
 
-    <!-- Vista gráfica para Eskaerak - Egunero_Hilero -->
     <record model="ir.ui.view" id="eskaerak_egunero_hilero_graph_view">
       <field name="name">eskaerak.egunero_hilero.graph</field>
       <field name="model">eskaerak.egunero_hilero</field>
@@ -207,38 +202,195 @@
       </field>
     </record>
 
-    <!-- Actions (actualizadas para incluir modo graph) -->
+    <!-- Zerbitzaria Views -->
+    <record model="ir.ui.view" id="zerbitzaria_list_view">
+      <field name="name">talde3.zerbitzaria.list</field>
+      <field name="model">talde3.zerbitzaria</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="dni" />
+          <field name="izena" />
+          <field name="abizena" />
+          <field name="korreoa" />
+          <field name="telefonoa" />
+          <field name="postua" />
+          <field name="txat_baimena" />
+        </list>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="zerbitzaria_form_view">
+      <field name="name">talde3.zerbitzaria.form</field>
+      <field name="model">talde3.zerbitzaria</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="dni" />
+              <field name="izena" />
+              <field name="abizena" />
+              <field name="pasahitza" />
+              <field name="korreoa" />
+              <field name="telefonoa" />
+              <field name="postua" />
+              <field name="txat_baimena" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Mahaia Views -->
+    <record model="ir.ui.view" id="mahaia_list_view">
+      <field name="name">talde3.mahaia.list</field>
+      <field name="model">talde3.mahaia</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="mahai_zenbakia" />
+          <field name="kopurua" />
+          <field name="habilitado" />
+        </list>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="mahaia_form_view">
+      <field name="name">talde3.mahaia.form</field>
+      <field name="model">talde3.mahaia</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="mahai_zenbakia" />
+              <field name="kopurua" />
+              <field name="habilitado" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Eskaera Views -->
+    <record model="ir.ui.view" id="eskaera_list_view">
+      <field name="name">talde3.eskaera.list</field>
+      <field name="model">talde3.eskaera</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="eskaera_zenb" />
+          <field name="izena" />
+          <field name="prezioa" />
+          <field name="mesa_id" />
+        </list>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="eskaera_form_view">
+      <field name="name">talde3.eskaera.form</field>
+      <field name="model">talde3.eskaera</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="eskaera_zenb" />
+              <field name="izena" />
+              <field name="prezioa" />
+              <field name="mesa_id" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Platera Views -->
+    <record model="ir.ui.view" id="platera_list_view">
+      <field name="name">talde3.platera.list</field>
+      <field name="model">talde3.platera</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="izena" />
+          <field name="deskribapena" />
+          <field name="kategoria" />
+          <field name="menu" />
+          <field name="created_at" />
+          <field name="created_by" />
+        </list>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="platera_form_view">
+      <field name="name">talde3.platera.form</field>
+      <field name="model">talde3.platera</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="izena" />
+              <field name="deskribapena" />
+              <field name="kategoria" />
+              <field name="menu" />
+              <field name="created_at" readonly="1" />
+              <field name="created_by" readonly="1" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Actions -->
     <record model="ir.actions.act_window" id="action_eskaera_platera">
-      <field name="name">Eskaera - Platera</field>
+      <field name="name">Zerbitari zenbat eskaera</field>
       <field name="res_model">eskaera.platera</field>
       <field name="view_mode">list,form,graph</field>
     </record>
 
     <record model="ir.actions.act_window" id="action_eskaera_zerbitzaria">
-      <field name="name">Eskaera - Zerbitzaria</field>
+      <field name="name">Platerak zenbat eskaera</field>
       <field name="res_model">eskaera.zerbitzaria</field>
       <field name="view_mode">list,form,graph</field>
     </record>
 
     <record model="ir.actions.act_window" id="action_eskaera_eguna_astero">
-      <field name="name">Eskaera - Eguna_Astero</field>
+      <field name="name">Asteko zein egunean fakturatzen da gehien</field>
       <field name="res_model">eskaera.eguna_astero</field>
       <field name="view_mode">list,form,graph</field>
     </record>
 
     <record model="ir.actions.act_window" id="action_faktura_egunero_astero">
-      <field name="name">Faktura - Egunero_Astero</field>
+      <field name="name">Asteko zein egunean egiten den eskaera gehien</field>
       <field name="res_model">faktura.egunero_astero</field>
       <field name="view_mode">list,form,graph</field>
     </record>
 
     <record model="ir.actions.act_window" id="action_eskaerak_egunero_hilero">
-      <field name="name">Eskaerak - Egunero_Hilero</field>
+      <field name="name">Hilabeteko zein egunean jasotzen da eskaera gehien</field>
       <field name="res_model">eskaerak.egunero_hilero</field>
       <field name="view_mode">list,form,graph</field>
     </record>
 
-    <!-- Acción para actualizar datos (ya la tienes) -->
+    <record model="ir.actions.act_window" id="action_zerbitzaria">
+      <field name="name">Zerbitzaria</field>
+      <field name="res_model">talde3.zerbitzaria</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_mahaia">
+      <field name="name">Mahaia</field>
+      <field name="res_model">talde3.mahaia</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_eskaera">
+      <field name="name">Eskaera</field>
+      <field name="res_model">talde3.eskaera</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_platera">
+      <field name="name">Platera</field>
+      <field name="res_model">talde3.platera</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Acción para actualizar datos -->
     <record model="ir.actions.server" id="action_actualizar_datos">
       <field name="name">Actualizar Datos</field>
       <field name="model_id" ref="base.model_res_users" />
@@ -253,21 +405,31 @@
       </field>
     </record>
 
-    <!-- Menús (ya los tienes) -->
+    <!-- Menús -->
     <menuitem name="Talde3-2Erronka" id="menu_root" />
-    <menuitem name="Tablak" id="menu_tablak" parent="menu_root" />
+    <menuitem name="Tablak" id="menu_tablak" parent="menu_root" sequence="10" />
+    <menuitem name="Info" id="menu_info" parent="menu_root" sequence="15" />
     <menuitem name="Actualizar" id="menu_actualizar" parent="menu_root"
       action="action_actualizar_datos" sequence="20" />
 
-    <menuitem name="Eskaera - Platera" id="menu_eskaera_platera" parent="menu_tablak"
+    <!-- Submenús para Tablak -->
+    <menuitem name="Zerbitzaria" id="menu_zerbitzaria" parent="menu_tablak"
+      action="action_zerbitzaria" />
+    <menuitem name="Mahaia" id="menu_mahaia" parent="menu_tablak" action="action_mahaia" />
+    <menuitem name="Eskaera" id="menu_eskaera" parent="menu_tablak" action="action_eskaera" />
+    <menuitem name="Platera" id="menu_platera" parent="menu_tablak" action="action_platera" />
+
+    <!-- Submenús para Info -->
+    <menuitem name="Eskaera - Platera" id="menu_info_eskaera_platera" parent="menu_info"
       action="action_eskaera_platera" />
-    <menuitem name="Eskaera - Zerbitzaria" id="menu_eskaera_zerbitzaria" parent="menu_tablak"
+    <menuitem name="Eskaera - Zerbitzaria" id="menu_info_eskaera_zerbitzaria" parent="menu_info"
       action="action_eskaera_zerbitzaria" />
-    <menuitem name="Eskaera - Eguna_Astero" id="menu_eskaera_eguna_astero" parent="menu_tablak"
+    <menuitem name="Eskaera - Eguna_Astero" id="menu_info_eskaera_eguna_astero" parent="menu_info"
       action="action_eskaera_eguna_astero" />
-    <menuitem name="Faktura - Egunero_Astero" id="menu_faktura_egunero_astero" parent="menu_tablak"
-      action="action_faktura_egunero_astero" />
-    <menuitem name="Eskaerak - Egunero_Hilero" id="menu_eskaerak_egunero_hilero"
-      parent="menu_tablak" action="action_eskaerak_egunero_hilero" />
+    <menuitem name="Faktura - Egunero_Astero" id="menu_info_faktura_egunero_astero"
+      parent="menu_info" action="action_faktura_egunero_astero" />
+    <menuitem name="Eskaerak - Egunero_Hilero" id="menu_info_eskaerak_egunero_hilero"
+      parent="menu_info" action="action_eskaerak_egunero_hilero" />
+
   </data>
 </odoo>

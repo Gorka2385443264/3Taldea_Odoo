@@ -82,6 +82,42 @@ switch ($endpoint) {
         echo json_encode($data);
         break;
 
+    case 'zerbitzaria':
+        $stmt = $pdo->query("
+            SELECT dni, izena, abizena, pasahitza, korreoa, telefonoa, postua, txat_baimena
+            FROM langilea
+        ");
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode($data);
+        break;
+
+    case 'mahaia':
+        $stmt = $pdo->query("
+            SELECT mahai_zenbakia, kopurua, habilitado
+            FROM mahaia
+        ");
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode($data);
+        break;
+
+    case 'eskaera':
+        $stmt = $pdo->query("
+            SELECT id AS eskaera_zenb, izena, prezioa, mesa_id
+            FROM eskaera
+        ");
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode($data);
+        break;
+
+    case 'platera':
+        $stmt = $pdo->query("
+            SELECT izena, deskribapena, kategoria, menu, created_at, created_by
+            FROM platera
+        ");
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode($data);
+        break;
+
     default:
         http_response_code(404);
         echo json_encode(['error' => 'Endpoint no encontrado']);
